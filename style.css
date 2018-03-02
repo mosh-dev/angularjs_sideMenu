@@ -1,0 +1,23 @@
+
+/*According SideNav CSS*/
+.list_no_padding { padding: 0; }
+.active { background-color: #eaeaea; }
+.sub_active { background-color: #3f51b5; color: white }
+
+
+.nav_icon { transition: all 200ms linear }
+.active .nav_icon { transform: rotateZ(90deg); }
+.menu_item p { font-size: 13px }
+.sub_menu_item p { padding-left: 12px; font-size: 12px }
+
+
+/*Accordion SideNav CSS END*/
+
+.domain_logo {
+	background-color: #fafafa;
+    color: black !important;
+    padding: 8px 12px;
+    border-radius: 2px;
+    font-weight: lighter;
+    overflow: hidden;
+}

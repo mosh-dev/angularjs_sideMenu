@@ -1,0 +1,18 @@
+/*Browser Scrollbar Override*/
+::-webkit-scrollbar { display: none }
+::-webkit-scrollbar { width: 10px;}
+::-webkit-scrollbar-thumb { background: #e0e0e0 }
+::-webkit-scrollbar-thumb:window-inactive { background: transparent; }
+
+
+/*Angular Ovveride*/
+md-icon:focus {outline:0;}
+
+md-sidenav, 
+md-sidenav.md-locked-open, 
+md-sidenav.md-closed.md-locked-open-add-active {
+    min-width: 240px !important;
+    width: auto !important;
+}
+
+md-content { font-size: 13px; }

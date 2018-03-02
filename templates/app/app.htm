@@ -1,0 +1,62 @@
+<!-- MAIN TOOLBAR -->
+<md-toolbar>
+    <div class="md-toolbar-tools">
+      <!-- TOGGLE ICON FOR SIDENAV SHOW HIDE  -->
+        <md-button hide-gt-sm class="md-icon-button" aria-label="Menu Toggle" ng-click="toggle()">
+            <md-icon md-svg-icon="res/icons/ic_menu_24px.svg"></md-icon>
+        </md-button>
+        <a class="domain_logo" ui-sref="home.dash"><b>Side</b> menu</a>
+        <!-- EMPTY SPACE  -->
+      <span flex></span>
+        <md-button class="md-icon-button" aria-label="Favorite">
+            <md-icon md-svg-icon="res/icons/ic_pie_chart_24px.svg"></md-icon>
+        </md-button>
+    </div>
+</md-toolbar>
+
+
+
+<!-- SIDENAV AND CONTENT AREA -->
+<div layout="row" flex>
+    <!-- SIDENAV -->
+    <md-sidenav layout="column" md-is-locked-open="$mdMedia('gt-sm')" class="md-sidenav-left" md-component-id="left">
+        
+        <md-list ng-repeat="menu in menus" class="list_no_padding manu_container">
+
+            <!-- MAIN MENU ITEMS -->
+            <md-list-item  
+                ng-click="parentMenuAction(menu)"
+                class="menu_item"
+                ng-class="{active: menu === activeMenu}">
+                    <md-icon md-svg-icon="res/icons/{{menu.icon}}"></md-icon>
+                    <p>{{menu.name}}</p>
+                    <span flex></span>
+                    <md-icon
+                        md-svg-icon="res/icons/ic_keyboard_arrow_right_24px.svg"
+                        ng-click="parentMenuAction(menu)"
+                        ng-show="menu.items.length != 0"
+                        class="nav_icon md-toggle-icon"
+                        aria-hidden="true">
+                    </md-icon>
+            </md-list-item>
+            <!-- SUB MENU ITEMS -->
+            <md-list-item 
+                ng-repeat="item in menu.items"
+                ng-click="chieldMenuAction(item)"
+                ng-show="menu === activeMenu"
+                class="sub_menu_item animate-show-hide"
+                ng-class="{'sub_active': item === activeSubMenu}">
+                    <p>{{item.name}}</p>
+            </md-list-item>
+
+        </md-list>
+
+    </md-sidenav>
+
+
+    <!-- MAIN CONTENT AREA -->
+    <md-content layout="column" flex layout-padding>
+        <!-- WHERE CONTENT WILL BE LOADED -->
+        <ui-view></ui-view>
+    </md-content>
+</div>

@@ -1,0 +1,47 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <title>Office Admin</title>
+    <meta name="viewport" content="width = device-width, initial-scale = 1">
+    
+    <!--===========================================================================
+        .................................IMPORTANT.......................................
+        PLEASE DO NOT CHANGE ANY LIBRARY OR THEIR ORDER BELLOW, CODE MAY GET BROKEN THESE 
+        LIBRARIES ARE USED WITH THEIR COMPATABLE VERSIONS WITH EACH OTHER
+    ================================================================================ -->
+
+    <!-- ROBOTO FONT FOR METERIAL DESIGN  -->
+    <link rel="stylesheet" href="libs/fonts/roboto.css">
+    
+    <!-- ANGULAR METERIAL STYLESHEET -->
+    <link rel="stylesheet" href="libs/angular/angular-material_1.1.7.min.css">
+    
+    <!-- ANGULAR JS AND ANGULAR UI ROUTER LIBRARIES -->
+    <script type="text/javascript" src="libs/angular/angular_1.6.7.min.js"></script>
+    <script type="text/javascript" src="libs/angular/angular-ui-router_1.0.14.min.js"></script>
+    
+    <!-- ADDITIONAL LIBRARY FOR ANGULAR METERIAL USED IN THE PROJECT -->
+    <script type="text/javascript" src="libs/angular/angular-animate_1.6.5.min.js"></script>
+    <script type="text/javascript" src="libs/angular/angular-aria.min_1.6.5.js"></script>
+    
+    
+    <!-- ANGULAR METERIAL MAIN LIBRARY -->
+    <script type="text/javascript" src="libs/angular/angular-material_1.1.7.min.js"></script>
+
+    <!-- ==========================END OF ANGULAR LIBRARY===================================-->
+
+    <!-- Application Js Files -->
+    <script type="text/javascript" src="app/app.js"></script>
+    <script type="text/javascript" src="app/app.routes.js"></script>
+    <script type="text/javascript" src="app/app.controllers.js"></script>
+
+    <!--Custom stylesheet For the app-->
+    <link rel="stylesheet" href="style.css">
+    <link rel="stylesheet" href="app_custom.css">
+  </head>
+
+  <body ng-app="myApp" layout="row">
+    <ui-view layout="column" flex></ui-view>
+  </body>
+
+</html>
